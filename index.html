@@ -10,119 +10,280 @@
         margin: 0;
         padding: 0;
       }
+
+      /* Start General Style */
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        padding: 0 15px;
+        margin: 0 auto;
+      }
+
+      /* Small */
+      @media (min-width: 768px) {
+        .container {
+          width: 750px;
+        }
+      }
+
+      /* Medium */
+      @media (min-width: 992px) {
+        .container {
+          width: 970px;
+        }
+      }
+
+      /* Large */
+      @media (min-width: 1200px) {
+        .container {
+          width: 1170px;
+        }
+      }
+      /*  */
+
+      /* Start Fonts */
+      @import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap");
+      /* End Fonts */
+
+      .geo-landing {
+        direction: rtl;
+        color: white;
+        text-align: center;
+        position: relative;
+        /*  */
+        font-family: "Readex Pro", sans-serif;
+      }
+      /* End General Style */
+
+      /* Start Top Design */
+      .geo-landing .top {
+        background-image: url("./assets/landing.jpg");
+        background-size: cover;
+        min-height: 100vh;
+        z-index: 1;
+        position: relative;
+        padding: 3rem 0;
+      }
+
+      .geo-landing .top::before,
+      .geo-landing .top::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+      }
+
+      .geo-landing .top::before {
+        background-color: rgba(0, 76, 65, 0.2);
+      }
+
+      .geo-landing .top::after {
+        background-image: url("./assets/layer2.png");
+        background-size: cover;
+      }
+      /* End Top Design */
+
+      /* Start MainBar Design */
+      .geo-landing .main-bar {
+        position: relative;
+      }
+
+      .geo-landing .main-bar img {
+        background-color: white;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        width: 15rem;
+      }
+      /* End MainBar Design */
+
+      /* Start Info Design */
+      .geo-landing .info {
+        margin-top: 3rem;
+        position: relative;
+      }
+
+      .geo-landing .info h1,
+      .geo-landing .info h2,
+      .geo-landing .info p {
+        margin: 0;
+      }
+
+      .geo-landing .info h1 {
+        font-size: 3rem;
+      }
+
+      .geo-landing .info h2 {
+        margin: 2.5rem auto;
+        font-size: 2.5rem;
+        font-weight: 600;
+      }
+
+      .geo-landing .info p {
+        font-size: 1.5rem;
+        max-width: 42rem;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+      /* End Info Design */
+
+      /* Start Bottom Design */
+      .geo-landing .bottom {
+        padding: 5rem 0;
+        /*  */
+        min-height: 100vh;
+        background: #004c41;
+        background: linear-gradient(
+          0deg,
+          rgba(0, 76, 65, 1) 0%,
+          rgba(75, 166, 189, 0.8) 100%
+        );
+        /*  */
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        flex-wrap: wrap;
+        /*  */
+        position: relative;
+      }
+
+      .geo-landing .bottom::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-image: url("./assets/layer.png");
+        background-size: contain;
+      }
+
+      .geo-landing .bottom .box {
+        position: relative;
+        border-radius: 1rem;
+        overflow: hidden;
+        /*  */
+        background-color: white;
+        min-height: 23rem;
+        width: 19rem;
+        /*  */
+        transition: background-color 0.3s;
+      }
+
+      .geo-landing .bottom .box:hover {
+        background-color: #004c41;
+      }
+
+      .geo-landing .bottom .box > svg {
+        position: absolute;
+        top: 2rem;
+        right: 0;
+        /*  */
+        transition: top 0.3s, opacity 0.3s;
+      }
+
+      .geo-landing .bottom .box:hover > svg {
+        /* transform: translateY(4rem); */
+        top: 9rem;
+        opacity: 0.3;
+      }
+
+      .geo-landing .bottom .box > h2 {
+        margin: 0;
+        color: #004c41;
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        left: 2rem;
+        font-size: 1.8rem;
+        font-weight: 600;
+        text-align: right;
+        /*  */
+        transition: color 0.3s;
+      }
+
+      .geo-landing .bottom .box:hover > h2 {
+        color: transparent;
+      }
+
+      /* Bottom Box Top Layer */
+      .geo-landing .bottom .box .top-layer {
+        padding: 2rem;
+        /*  */
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        color: white;
+        /*  */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /*  */
+        transition: opacity 0.3s;
+        opacity: 0;
+      }
+
+      .geo-landing .bottom .box:hover .top-layer {
+        opacity: 1;
+      }
+
+      .geo-landing .bottom .box .top-layer h2 {
+        margin: 0;
+        font-size: 1.8rem;
+        font-weight: 600;
+        text-align: right;
+      }
+
+      .geo-landing .bottom .box .top-layer ul {
+        text-align: right;
+      }
+
+      .geo-landing .bottom .box .top-layer ul li:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+      .geo-landing .bottom .box .top-layer ul li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1.1rem;
+      }
+
+      .geo-landing .bottom .box .top-layer ul li svg {
+        margin-bottom: -0.2rem;
+        flex-shrink: 0;
+      }
+      /* End Bottom Design */
     </style>
-    <!--  -->
   </head>
   <body>
     <div class="geo-landing">
       <!--  -->
-      <style>
-        * {
-          -webkit-box-sizing: border-box;
-          -moz-box-sizing: border-box;
-          box-sizing: border-box;
-        }
-
-        a {
-          text-decoration: none;
-        }
-
-        ul {
-          list-style: none;
-          margin: 0;
-          padding: 0;
-        }
-
-        .container {
-          padding: 0 15px;
-          margin: 0 auto;
-        }
-
-        /* Small */
-        @media (min-width: 768px) {
-          .container {
-            width: 750px;
-          }
-        }
-
-        /* Medium */
-        @media (min-width: 992px) {
-          .container {
-            width: 970px;
-          }
-        }
-
-        /* Large */
-        @media (min-width: 1200px) {
-          .container {
-            width: 1170px;
-          }
-        }
-        /*  */
-
-        /* Start Fonts */
-        @import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap");
-        /* End Fonts */
-
-        .geo-landing {
-          direction: rtl;
-          color: white;
-          text-align: center;
-          position: relative;
-          /*  */
-          font-family: "Readex Pro", sans-serif;
-        }
-      </style>
-      <!--  -->
       <div class="top">
         <div class="container">
-          <!-- top style -->
-          <style>
-            .geo-landing .top {
-              background-image: url("./assets/landing.jpg");
-              background-size: cover;
-              min-height: 100vh;
-              z-index: 1;
-              position: relative;
-              padding: 3rem 0;
-            }
-
-            .geo-landing .top::before,
-            .geo-landing .top::after {
-              content: "";
-              position: absolute;
-              left: 0;
-              right: 0;
-              top: 0;
-              bottom: 0;
-            }
-
-            .geo-landing .top::before {
-              background-color: rgba(0, 76, 65, 0.2);
-            }
-
-            .geo-landing .top::after {
-              background-image: url("./assets/layer2.png");
-              background-size: cover;
-            }
-          </style>
           <!--  -->
           <div class="main-bar">
             <img src="./assets/Logo.svg" alt="" />
           </div>
-          <!-- main-bar style -->
-          <style>
-            .geo-landing .main-bar {
-              position: relative;
-            }
 
-            .geo-landing .main-bar img {
-              background-color: white;
-              padding: 0.5rem;
-              border-radius: 0.5rem;
-              width: 15rem;
-            }
-          </style>
           <!--  -->
           <div class="info">
             <h1>الهيئة العامة للمساحة والمعلومات الجيومكانية</h1>
@@ -132,36 +293,7 @@
               مستمرة، تقارير دقيقة، دعم اتخاذ القرار
             </p>
           </div>
-          <!-- Info Style -->
-          <style>
-            .geo-landing .info {
-              margin-top: 3rem;
-              position: relative;
-            }
 
-            .geo-landing .info h1,
-            .geo-landing .info h2,
-            .geo-landing .info p {
-              margin: 0;
-            }
-
-            .geo-landing .info h1 {
-              font-size: 3rem;
-            }
-
-            .geo-landing .info h2 {
-              margin: 2.5rem auto;
-              font-size: 2.5rem;
-              font-weight: 600;
-            }
-
-            .geo-landing .info p {
-              font-size: 1.5rem;
-              max-width: 42rem;
-              margin: 0 auto;
-              line-height: 1.7;
-            }
-          </style>
           <!--  -->
         </div>
       </div>
@@ -781,137 +913,6 @@
           </div>
         </a>
       </div>
-      <!-- Bottom Design -->
-      <style>
-        .geo-landing .bottom {
-          padding: 5rem 0;
-          /*  */
-          min-height: 100vh;
-          background: #004c41;
-          background: linear-gradient(
-            0deg,
-            rgba(0, 76, 65, 1) 0%,
-            rgba(75, 166, 189, 0.8) 100%
-          );
-          /*  */
-          display: flex;
-          justify-content: center;
-          gap: 3rem;
-          flex-wrap: wrap;
-          /*  */
-          position: relative;
-        }
-
-        .geo-landing .bottom::before {
-          content: "";
-          position: absolute;
-          left: 0;
-          right: 0;
-          top: 0;
-          bottom: 0;
-          background-image: url("./assets/layer.png");
-          background-size: contain;
-        }
-
-        .geo-landing .bottom .box {
-          position: relative;
-          border-radius: 1rem;
-          overflow: hidden;
-          /*  */
-          background-color: white;
-          min-height: 23rem;
-          width: 19rem;
-          /*  */
-          transition: background-color 0.3s;
-        }
-
-        .geo-landing .bottom .box:hover {
-          background-color: #004c41;
-        }
-
-        .geo-landing .bottom .box > svg {
-          position: absolute;
-          top: 2rem;
-          right: 0;
-          /*  */
-          transition: top 0.3s, opacity 0.3s;
-        }
-
-        .geo-landing .bottom .box:hover > svg {
-          /* transform: translateY(4rem); */
-          top: 9rem;
-          opacity: 0.3;
-        }
-
-        .geo-landing .bottom .box > h2 {
-          margin: 0;
-          color: #004c41;
-          position: absolute;
-          bottom: 2rem;
-          right: 2rem;
-          left: 2rem;
-          font-size: 1.8rem;
-          font-weight: 600;
-          text-align: right;
-          /*  */
-          transition: color 0.3s;
-        }
-
-        .geo-landing .bottom .box:hover > h2 {
-          color: transparent;
-        }
-
-        /* Bottom Box Top Layer */
-        .geo-landing .bottom .box .top-layer {
-          padding: 2rem;
-          /*  */
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          color: white;
-          /*  */
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          /*  */
-          transition: opacity 0.3s;
-          opacity: 0;
-        }
-
-        .geo-landing .bottom .box:hover .top-layer {
-          opacity: 1;
-        }
-
-        .geo-landing .bottom .box .top-layer h2 {
-          margin: 0;
-          font-size: 1.8rem;
-          font-weight: 600;
-          text-align: right;
-        }
-
-        .geo-landing .bottom .box .top-layer ul {
-          text-align: right;
-        }
-
-        .geo-landing .bottom .box .top-layer ul li:not(:last-child) {
-          margin-bottom: 1rem;
-        }
-
-        .geo-landing .bottom .box .top-layer ul li {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 1rem;
-          font-size: 1.1rem;
-        }
-
-        .geo-landing .bottom .box .top-layer ul li svg {
-          margin-bottom: -0.2rem;
-          flex-shrink: 0;
-        }
-      </style>
     </div>
   </body>
 </html>
